@@ -28,7 +28,7 @@ test {
 }
 
 application {
-    mainClass.set("seedu.duke.Duke")
+    mainClass.set("sam")
 }
 
 // Shadow plugin configuration for v8.x and Gradle 9
