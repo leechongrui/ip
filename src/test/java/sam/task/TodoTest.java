@@ -2,7 +2,6 @@ package sam.task;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import sam.task.Todo;
 
 public class TodoTest {
     @Test

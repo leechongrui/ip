@@ -1,4 +1,7 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class Sam {
     public static void main(String[] args) {
@@ -36,18 +39,18 @@ public class Sam {
                     case MARK: {
                         int idx = parseIndex(rest, tasks.size());
                         tasks.get(idx).markDone();
-                        storage.save(tasks);
-                        System.out.println("____________________________________________________________");
+                        storage.save(tasks.getTasks());
+                        ui.showLine();
                         System.out.println(" Nice! I've marked this task as done:");
                         System.out.println(" " + tasks.get(idx));
-                        System.out.println("____________________________________________________________");
+                        ui.showLine();
                         break;
                     }
 
                     case UNMARK: {
                         int idx = parseIndex(rest, tasks.size());
                         tasks.get(idx).unmark();
-                        storage.save(tasks);
+                        storage.save(tasks.getTasks());
                         ui.showLine();
                         System.out.println(" OK, I've marked this task as not done yet:");
                         System.out.println(" " + tasks.get(idx));
@@ -58,7 +61,7 @@ public class Sam {
                     case DELETE: {
                         int idx = parseIndex(rest, tasks.size());
                         Task removed = tasks.remove(idx);
-                        storage.save(tasks);
+                        storage.save(tasks.getTasks());
                         ui.showLine();
                         System.out.println(" Noted. I've removed this task:");
                         System.out.println(" " + removed);
@@ -168,7 +171,7 @@ public class Sam {
                         break;
 
                     case MARK: {
-                        int idx = parseIndex(rest, tasks.size());
+                        int idx = parseIndex(rest, tasks.size());                        git tag Level-7
                         tasks.get(idx).markDone();
                         storage.save(tasks);
                         System.out.println("____________________________________________________________");
@@ -248,4 +251,3 @@ public class Sam {
         }
     }
 }
-

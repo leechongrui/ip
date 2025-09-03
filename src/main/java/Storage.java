@@ -1,10 +1,6 @@
 import java.io.*;
 import java.nio.file.*;
 import java.util.ArrayList;
-import sam.task.Task;
-import sam.task.Todo;
-import sam.task.Deadline;
-import sam.task.Event;
 
 public class Storage {
     private final Path filePath;
@@ -61,7 +57,7 @@ public class Storage {
     private Task parseTask(String line) {
         // Example: T | 1 | read book
         // Implement parsing logic based on your Task/Deadline/Event/Todo classes
-        String[] parts = line.split(" \\| ");
+        String[] parts = line.split(" \| ");
         try {
             switch (parts[0]) {
                 case "T":
